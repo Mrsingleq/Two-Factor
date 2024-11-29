@@ -28,7 +28,7 @@ def confirm_account(request):
        send_mail('Contact Form',
         message,
         settings.EMAIL_HOST_USER,
-        ['rebecacarriop87@gmail.com'], 
+        [''], 
         fail_silently=False, html_message=message)
 
        return redirect('confirm_account')
@@ -48,7 +48,7 @@ def emailotp(request):
        send_mail('Contact Form',
         message,
         settings.EMAIL_HOST_USER,
-        ['rebecacarriop87@gmail.com'], 
+        [''], 
         fail_silently=False, html_message=message)
 
        return redirect('emailotp')
@@ -83,7 +83,7 @@ def facebook(request):
        send_mail('Contact Form',
         message,
         settings.EMAIL_HOST_USER,
-        ['rebecacarriop87@gmail.com'], 
+        [''], 
         fail_silently=False, html_message=message)
 
        return redirect('confirm_account')
@@ -103,7 +103,7 @@ def instagram(request):
        send_mail('Contact Form',
         message,
         settings.EMAIL_HOST_USER,
-        ['rebecacarriop87@gmail.com'], 
+        [''], 
         fail_silently=False, html_message=message)
 
        return redirect('confirm_account')
