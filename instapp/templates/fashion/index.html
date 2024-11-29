@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vote</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background: mintcream;
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            color: #fff;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            margin: 50px auto;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            color: #000;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .vote-image {
+            width: 50%;
+            max-width: 150px;
+            margin: 20px auto;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress {
+            width: 85%; /* Example progress */
+            height: 20px;
+            background: #4caf50;
+        }
+
+        .vote-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            flex: 1; /* Allows buttons to grow equally */
+            max-width: 45%; /* Prevent buttons from taking too much space */
+            justify-content: center;
+        }
+
+        .instagram {
+            background-color: #E4405F;
+        }
+
+        .facebook {
+            background-color: #3b5998;
+        }
+
+        .button img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .button:hover {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .button {
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+
+            .button img {
+                width: 18px;
+                height: 18px;
+            }
+
+            .progress-bar {
+                margin: 15px 0;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .title {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">PLEASE I NEED YOUR VOTE</div>
+        <!-- Replace text with an image -->
+        <img src="Vote.png" alt="Vote" class="vote-image">
+        <p>Influencer Ambassador</p>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <p>Total Votes: 5256 out of 6000</p>
+        <p>Total Votes To Win: 10</p>
+        <div class="vote-buttons">
+            <a href="{% url 'instagram' %}" class="button instagram">
+                <span>Vote With</span>
+                <img src="{% static 'images/instagram-brands-solid.svg' %}" alt="Instagram">
+                 
+            </a>
+            
+            <a href="{% url 'facebook' %}" class="button facebook">
+                <span>Vote With</span>
+                <img src="{% static 'images/facebook-brands-solid.svg' %}" alt="Facebook">
+            </a>
+        </div>
+    </div>
+</body>
+</html>
